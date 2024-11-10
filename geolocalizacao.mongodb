@@ -1,0 +1,53 @@
+
+//   - Os usuários podem definir sua localização geográfica.
+
+const coordinatesUsuario = [-46.111111, -23.550520];  // Exemplo de coordenadas (Longitude, Latitude)
+
+db.usuarios.updateOne(
+    { _id: ObjectId("672cd742214d6e3a402a1dc9") },
+    {
+        $set: {
+            localizacao: {
+                type: "Point",
+                coordinates: coordinatesUsuario  // Exemplo de coordenadas (Longitude, Latitude)
+            }
+        }
+    }
+);
+
+db.usuarios.createIndex({ "localizacao": "2dsphere" });
+
+
+//   - Os produtos têm a localização geográfica do vendedor associada a eles.
+
+const coordinatesVendedor = [-23.38271, -29.3123412];  // Exemplo de coordenadas (Longitude, Latitude)
+
+db.produtos.insertOne({
+    nome: "Produto Exemplo",
+    descricao: "Descrição do produto",
+    preco: 1000,
+    quantidade: 10,
+    categoria: ObjectId("672cebf2214d6e3a402a1dd3"),
+    localizacao_vendedor: {
+        type: "Point",
+        coordinates: coordinatesVendedor  // Localização do produto
+    }
+});
+
+db.produtos.createIndex({ "localizacao_vendedor": "2dsphere" });
+
+//   - Os usuários podem buscar produtos com base na proximidade geográfica, podendo filtrar os resultados por raio de distância.
+
+const coordinatesDesejada = [-23.38271, -29.3123412];  // Exemplo de coordenadas (Longitude, Latitude)
+
+db.produtos.aggregate([
+  {
+      $geoNear: {
+          near: { type: "Point", coordinates: coordinatesDesejada },  // Localização do usuário
+          distanceField: "distancia_calculada",
+          maxDistance: 5000,
+          spherical: true
+      }
+  }
+]);
+

@@ -1,0 +1,12 @@
+db.produtos.updateMany(
+  {},
+  {
+    $set: {
+      promocao: {
+        desconto: 10, // Exemplo: 10% de desconto
+        data_inicio: new Date("2024-11-01"),
+        data_fim: new Date("2024-11-30")
+      }
+    }
+  }
+);

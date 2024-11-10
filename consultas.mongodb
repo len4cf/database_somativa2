@@ -1,0 +1,35 @@
+//    - Escreva uma consulta para atualizar a quantidade disponível de um produto após uma compra.
+
+
+// 1. Escreva uma consulta para encontrar todos os produtos em uma categoria específica.
+
+db.produtos.find({
+  categoria: ObjectId("672cebf2214d6e3a402a1dd2")
+});
+
+// 2.   - Escreva uma consulta para encontrar todas as avaliações de um produto específico.
+
+db.avaliacoes.find({
+  produto_id: ObjectId("672cef37214d6e3a402a1e13")
+});
+
+// 3.   - Escreva uma consulta para criar uma nova transação.
+
+db.transacoes.insertOne({
+  usuario_id: ObjectId("672cd742214d6e3a402a1dc9"),  
+  produto_id: ObjectId("672cef37214d6e3a402a1e14"),  
+  data_compra: new Date("2024-11-07T15:00:00Z"),     
+  quantidade: 2,                                      
+  valor_total: 3000.0                                  
+});
+
+// 4.   - Escreva uma consulta para atualizar a quantidade disponível de um produto após uma compra.
+
+const transacao = db.transacoes.findOne({ _id: ObjectId("672cf12c214d6e3a402a1e23") });
+const quantidadeComprada = transacao.quantidade; // Captura a quantidade comprada
+
+db.produtos.updateOne(
+  { _id: ObjectId("672cef37214d6e3a402a1e13") }, // Filtro pelo produto
+  { $inc: { quantidade: -quantidadeComprada } } // Decrementa a quantidade comprada
+);
+

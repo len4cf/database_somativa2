@@ -1,0 +1,45 @@
+
+// Suponha que o valor total da transação seja R$150
+const valorTotal = 150;
+const pontosGanhos = valorTotal;  // 1 ponto por R$1
+
+// Criar o registro de transação
+db.transacoes.insertOne({
+  usuario_id: ObjectId("672cd742214d6e3a402a1dca"),
+  produto_id: ObjectId("672cef37214d6e3a402a1e16"),
+  quantidade: 1,
+  valor_total: valorTotal,   // R$150
+  pontos_ganhos: pontosGanhos, // 1 ponto por R$1
+  data_compra: new Date()
+});
+
+// Atualizar os pontos de fidelidade do usuário
+db.usuarios.updateOne(
+  { _id: ObjectId("672cd742214d6e3a402a1dca") },
+  { $inc: { pontos_fidelidade: pontosGanhos } }  // Incrementa os pontos no usuário
+);
+
+
+////////////
+
+// Suponha que o usuário queira usar 50 pontos para desconto
+const pontosUsados = 50;
+const precoOriginal = 150;
+const desconto = pontosUsados * 0.5;  // Exemplo: 1 ponto = R$0.50 de desconto
+const precoComDesconto = precoOriginal - desconto;
+
+// Criar o registro de transação com desconto
+db.transacoes.insertOne({
+  usuario_id: ObjectId("672cd742214d6e3a402a1dca"),
+  produto_id: ObjectId("672cef37214d6e3a402a1e16"),
+  quantidade: 1,
+  valor_total: precoComDesconto,  // Preço após o desconto
+  pontos_ganhos: precoComDesconto,  // Pontos calculados com base no valor com desconto
+  data_compra: new Date()
+});
+
+// Atualizar os pontos de fidelidade do usuário (subtraindo os pontos usados)
+db.usuarios.updateOne(
+  { _id: ObjectId("672cd742214d6e3a402a1dca") },
+  { $inc: { pontos_fidelidade: -pontosUsados } }  // Subtrai os pontos usados
+);

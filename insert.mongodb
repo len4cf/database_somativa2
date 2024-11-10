@@ -1,0 +1,36 @@
+db.categorias.insertMany([
+  { nome: "Eletrônicos", subcategorias: ["Celulares", "Computadores", "Acessórios"] },
+  { nome: "Roupas", subcategorias: ["Camisas", "Calças", "Sapatos"] },
+  { nome: "Alimentos", subcategorias: ["Bebidas", "Snacks", "Congelados"] },
+  { nome: "Móveis", subcategorias: ["Camas", "Mesas", "Cadeiras"] },
+  { nome: "Livros", subcategorias: ["Ficção", "Educação", "Biografia"] }
+]);
+
+
+const categoriaEletronicosId = db.categorias.findOne({ nome: "Eletrônicos" })._id;
+const categoriaRoupasId = db.categorias.findOne({ nome: "Roupas" })._id;
+
+db.produtos.insertMany([
+  { nome: "Celular XYZ", descricao: "Smartphone moderno", preco: 1500, quantidade: 10, categoria: categoriaEletronicosId },
+  { nome: "Notebook ABC", descricao: "Notebook para trabalho e estudos", preco: 3000, quantidade: 5, categoria: categoriaEletronicosId },
+  { nome: "Camisa Polo", descricao: "Camisa confortável de algodão", preco: 50, quantidade: 20, categoria: categoriaRoupasId },
+  { nome: "Calça Jeans", descricao: "Calça jeans casual", preco: 100, quantidade: 15, categoria: categoriaRoupasId },
+  { nome: "Fone de Ouvido", descricao: "Fone com alta qualidade de som", preco: 200, quantidade: 8, categoria: categoriaEletronicosId }
+]);
+
+db.avaliacoes.insertMany([
+  {
+    usuario_id: ObjectId("672cd742214d6e3a402a1dc9"),
+    produto_id: ObjectId("672cef37214d6e3a402a1e13"),
+    nota: 4,
+    comentario: "Muito bom, gostei bastante!",
+    data_avaliacao: new Date("2024-11-07T16:00:00Z")
+  },
+  {
+    usuario_id: ObjectId("672cd742214d6e3a402a1dca"),
+    produto_id: ObjectId("672cef37214d6e3a402a1e14"),
+    nota: 5,
+    comentario: "Excelente qualidade, recomendo!",
+    data_avaliacao: new Date("2024-11-08T17:00:00Z")
+  }
+]);

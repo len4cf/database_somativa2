@@ -1,0 +1,60 @@
+
+//    - Escreva uma consulta de agregação para encontrar a média de avaliações para cada produto.
+
+db.avaliacoes.aggregate([
+  {
+    $group: {
+      _id: "$produto_id",        // Agrupar pelo produto_id
+      media_avaliacao: { $avg: "$nota" }  // Calcular a média das avaliações (campo 'nota')
+    }
+  },
+  {
+    $lookup: {
+      from: "produtos",                   // Juntar com a coleção 'produtos'
+      localField: "_id",                   // Chave de junção
+      foreignField: "_id",                 // Chave de junção
+      as: "produto"                       // Nome do campo que vai armazenar o resultado da junção
+    }
+  },
+  {
+    $unwind: "$produto"                   // Desestruturar o array retornado pela junção
+  },
+  {
+    $project: {
+      _id: 0,                            // Não exibir o _id
+      produto_id: "$_id",                // Exibir o id do produto
+      nome_produto: "$produto.nome",     // Exibir o nome do produto
+      media_avaliacao: 1  // -1              // Exibir a média da avaliação (esse -1 ou 1 é pra exibir de forma crescente ou decrescente)
+    }
+  }
+]);
+
+
+//    - Escreva uma consulta de agregação para encontrar o total de vendas para cada categoria.
+
+db.transacoes.aggregate([
+  {
+    $lookup: {
+      from: "produtos",              // Juntar com a coleção 'produtos'
+      localField: "produto_id",      // Chave de junção
+      foreignField: "_id",           // Chave de junção
+      as: "produto"                  // Nome do campo que vai armazenar o resultado da junção
+    }
+  },
+  {
+    $unwind: "$produto"             // Desestruturar o array retornado pela junção
+  },
+  {
+    $group: {
+      _id: "$produto.categoria",    // Agrupar por categoria do produto
+      total_vendas: { $sum: "$quantidade" }  // Somar as quantidades de cada venda
+    }
+  },
+  {
+    $project: {
+      _id: 0,                        // Não exibir o _id
+      categoria: "$_id",             // Exibir a categoria
+      total_vendas: 1                // Exibir o total de vendas
+    }
+  }
+]);

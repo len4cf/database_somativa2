@@ -1,0 +1,155 @@
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// The current database to use.
+use('marketplace');
+
+db.createCollection("usuarios", {
+  validator: {
+    $jsonSchema: {
+      "bsonType": "object",
+      "required": ["nome", "email", "senha", "endereco"],
+      "properties": {
+        "nome": {
+          "bsonType": "string",
+          "description": "O nome do usuário é obrigatório e deve ser uma string."
+        },
+        "email": {
+          "bsonType": "string",
+          "pattern": "^.+@.+\..+$",
+          "description": "O email é obrigatório e deve estar em um formato válido."
+        },
+        "senha": {
+          "bsonType": "string",
+          "description": "A senha é obrigatória e deve ser uma string."
+        },
+        "endereco": {
+          "bsonType": "string",
+          "description": "O endereço é obrigatório e deve ser uma string."
+        }
+      }
+    }
+  }
+})
+
+db.createCollection("produtos", {
+  validator: {
+  $jsonSchema: {
+    "bsonType": "object",
+    "required": ["nome", "descricao", "preco", "quantidade", "categoria"],
+    "properties": {
+      "nome": {
+        "bsonType": "string",
+        "description": "O nome do produto é obrigatório e deve ser uma string."
+      },
+      "descricao": {
+        "bsonType": "string",
+        "description": "A descrição do produto é obrigatória e deve ser uma string."
+      },
+      "preco": {
+        "bsonType": "double",
+        "minimum": 0,
+        "description": "O preço é obrigatório e deve ser um número positivo."
+      },
+      "quantidade": {
+        "bsonType": "int",
+        "minimum": 0,
+        "description": "A quantidade disponível é obrigatória e deve ser um número inteiro não negativo."
+      },
+      "categoria": {
+        "bsonType": "objectId",
+        "description": "A categoria é obrigatória e deve ser uma referência à collection de categorias."
+      }
+    }
+  }
+  }
+})
+
+db.createCollection("categorias", {
+  validator: {
+    $jsonSchema: {
+      "bsonType": "object",
+      "required": ["nome", "subcategorias"],
+      "properties": {
+        "nome": {
+          "bsonType": "string",
+          "description": "O nome da categoria é obrigatório e deve ser uma string."
+        },
+        "subcategorias": {
+          "bsonType": "array",
+          "items": {
+            "bsonType": "string"
+          },
+          "description": "Subcategorias é um array de strings que representa subcategorias associadas a esta categoria."
+        }
+      }
+    }
+  }
+})
+
+db.createCollection("transacoes", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["usuario_id", "produto_id", "data_compra", "quantidade", "valor_total"],
+      properties: {
+        usuario_id: {
+          bsonType: "objectId",
+          description: "O usuário que realizou a compra."
+        },
+        produto_id: {
+          bsonType: "objectId",
+          description: "O produto comprado."
+        },
+        data_compra: {
+          bsonType: "date",
+          description: "A data da transação."
+        },
+        quantidade: {
+          bsonType: "int",
+          minimum: 1,
+          description: "A quantidade do produto comprada é obrigatória e deve ser um número positivo."
+        },
+        valor_total: {
+          bsonType: ["double", "int"],
+          minimum: 0,
+          description: "O valor total da transação deve ser positivo."
+        }
+      }
+    }
+  }
+});
+
+
+db.createCollection("avaliacoes", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["usuario_id", "produto_id", "nota", "comentario", "data_avaliacao"],
+      properties: {
+        usuario_id: {
+          bsonType: "objectId",
+          description: "O ID do usuário que fez a avaliação."
+        },
+        produto_id: {
+          bsonType: "objectId",
+          description: "O ID do produto que foi avaliado."
+        },
+        nota: {
+          bsonType: "int",
+          minimum: 1,
+          maximum: 5,
+          description: "A nota da avaliação deve ser entre 1 e 5."
+        },
+        comentario: {
+          bsonType: "string",
+          description: "O comentário da avaliação é obrigatório e deve ser uma string."
+        },
+        data_avaliacao: {
+          bsonType: "date",
+          description: "A data da avaliação."
+        }
+      }
+    }
+  }
+});
