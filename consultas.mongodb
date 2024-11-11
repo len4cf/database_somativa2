@@ -1,10 +1,10 @@
 //    - Escreva uma consulta para atualizar a quantidade disponível de um produto após uma compra.
 
 
-// 1. Escreva uma consulta para encontrar todos os produtos em uma categoria específica.
+// 1. Escreva uma consulta para encontrar todos os produtos em uma categoria específica - Eletrônicos.
 
 db.produtos.find({
-  categoria: ObjectId("672cebf2214d6e3a402a1dd2")
+  categoria: ObjectId("6732263298d2e2b68cd6c63a")
 });
 
 // 2.   - Escreva uma consulta para encontrar todas as avaliações de um produto específico.
@@ -17,8 +17,8 @@ db.avaliacoes.find({
 
 db.transacoes.insertOne({
   usuario_id: ObjectId("672cd742214d6e3a402a1dc9"),  
-  produto_id: ObjectId("672cef37214d6e3a402a1e14"),  
-  data_compra: new Date("2024-11-07T15:00:00Z"),     
+  produto_id: ObjectId("673227f85d7c511b9383626c"),  
+  data_compra: new Date("2023-11-07T15:00:00Z"),     
   quantidade: 2,                                      
   valor_total: 3000.0                                  
 });

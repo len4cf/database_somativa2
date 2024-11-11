@@ -1,0 +1,53 @@
+[{
+  "_id": {
+    "$oid": "672cd742214d6e3a402a1dc9"
+  },
+  "nome": "Alice Silva",
+  "email": "alice@example.com",
+  "senha": "senha123",
+  "endereco": "Rua A, 123",
+  "localizacao": {
+    "type": "Point",
+    "coordinates": [
+      -46.111111,
+      -23.55052
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "672cd742214d6e3a402a1dca"
+  },
+  "nome": "Bruno Oliveira",
+  "email": "bruno@example.com",
+  "senha": "senha456",
+  "endereco": "Rua B, 456",
+  "pontos_fidelidade": 100
+},
+{
+  "_id": {
+    "$oid": "672cd742214d6e3a402a1dcb"
+  },
+  "nome": "Carla Souza",
+  "email": "carla@example.com",
+  "senha": "senha789",
+  "endereco": "Rua C, 789"
+},
+{
+  "_id": {
+    "$oid": "672cd742214d6e3a402a1dcc"
+  },
+  "nome": "Diego Lima",
+  "email": "diego@example.com",
+  "senha": "senha101112",
+  "endereco": "Rua D, 101"
+},
+{
+  "_id": {
+    "$oid": "672cd742214d6e3a402a1dcd"
+  },
+  "nome": "Elaine Martins",
+  "email": "elaine@example.com",
+  "senha": "senha131415",
+  "endereco": "Rua E, 102"
+}]

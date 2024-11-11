@@ -5,7 +5,14 @@
 // - Permita que os vendedores respondam às avaliações deixadas em seus produtos.
 
 db.avaliacoes.updateOne(
-  { _id: ObjectId("5f1e8bdf35a2e4f0f5fdd8c3") },
+  { _id: ObjectId("672cf17d214d6e3a402a1e29") },
+  {
+    $set: { resposta_vendedor: "Obrigado pela sua avaliação! Vamos continuar melhorando." }
+  }
+);
+
+db.avaliacoes.updateOne(
+  { _id: ObjectId("672cf17d214d6e3a402a1e28") },
   {
     $set: { resposta_vendedor: "Obrigado pela sua avaliação! Vamos continuar melhorando." }
   }
