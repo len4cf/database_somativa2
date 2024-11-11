@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "6732263298d2e2b68cd6c63a"
+  },
+  "nome": "Eletrônicos",
+  "subcategorias": [
+    "Celulares",
+    "Computadores",
+    "Acessórios"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6732263298d2e2b68cd6c63b"
+  },
+  "nome": "Roupas",
+  "subcategorias": [
+    "Camisas",
+    "Calças",
+    "Sapatos"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6732263298d2e2b68cd6c63c"
+  },
+  "nome": "Alimentos",
+  "subcategorias": [
+    "Bebidas",
+    "Snacks",
+    "Congelados"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6732263298d2e2b68cd6c63d"
+  },
+  "nome": "Móveis",
+  "subcategorias": [
+    "Camas",
+    "Mesas",
+    "Cadeiras"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6732263298d2e2b68cd6c63e"
+  },
+  "nome": "Livros",
+  "subcategorias": [
+    "Ficção",
+    "Educação",
+    "Biografia"
+  ]
+}]

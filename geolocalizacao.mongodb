@@ -22,12 +22,23 @@ db.usuarios.createIndex({ "localizacao": "2dsphere" });
 
 const coordinatesVendedor = [-23.38271, -29.3123412];  // Exemplo de coordenadas (Longitude, Latitude)
 
+db.produtos.updateOne(
+    { _id: ObjectId("673227f85d7c511b9383626c") },
+    {
+      $set: { localizacao_vendedor: {
+        type: "Point",
+        coordinates: coordinatesVendedor  // Localização do produto
+            }
+    }
+    }
+  );
+
 db.produtos.insertOne({
     nome: "Produto Exemplo",
     descricao: "Descrição do produto",
     preco: 1000,
     quantidade: 10,
-    categoria: ObjectId("672cebf2214d6e3a402a1dd3"),
+    categoria: ObjectId("6732263298d2e2b68cd6c63b"),
     localizacao_vendedor: {
         type: "Point",
         coordinates: coordinatesVendedor  // Localização do produto

@@ -1,0 +1,97 @@
+[{
+  "_id": {
+    "$oid": "672cf17d214d6e3a402a1e28"
+  },
+  "usuario_id": {
+    "$oid": "672cd742214d6e3a402a1dc9"
+  },
+  "produto_id": {
+    "$oid": "673227f85d7c511b9383626d"
+  },
+  "nota": 4,
+  "comentario": "Muito bom, gostei bastante!",
+  "data_avaliacao": {
+    "$date": "2024-11-07T16:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "672cf17d214d6e3a402a1e29"
+  },
+  "usuario_id": {
+    "$oid": "672cd742214d6e3a402a1dca"
+  },
+  "produto_id": {
+    "$oid": "673227f85d7c511b9383626e"
+  },
+  "nota": 5,
+  "comentario": "Excelente qualidade, recomendo!",
+  "data_avaliacao": {
+    "$date": "2024-11-08T17:00:00.000Z"
+  },
+  "resposta_vendedor": "Obrigado pela sua avaliação! Vamos continuar melhorando."
+},
+{
+  "_id": {
+    "$oid": "672cf697214d6e3a402a1e33"
+  },
+  "usuario_id": {
+    "$oid": "672cd742214d6e3a402a1dc9"
+  },
+  "produto_id": {
+    "$oid": "673227f85d7c511b9383626c"
+  },
+  "nota": 4,
+  "comentario": "Muito daora!",
+  "data_avaliacao": {
+    "$date": "2024-11-07T16:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "672cf697214d6e3a402a1e34"
+  },
+  "usuario_id": {
+    "$oid": "672cd742214d6e3a402a1dca"
+  },
+  "produto_id": {
+    "$oid": "673227f85d7c511b9383626b"
+  },
+  "nota": 5,
+  "comentario": "Topp!",
+  "data_avaliacao": {
+    "$date": "2024-11-08T17:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "672cf6be214d6e3a402a1e39"
+  },
+  "usuario_id": {
+    "$oid": "672cd742214d6e3a402a1dc9"
+  },
+  "produto_id": {
+    "$oid": "673227f85d7c511b9383626a"
+  },
+  "nota": 1,
+  "comentario": "Muito leeeegal!",
+  "data_avaliacao": {
+    "$date": "2024-11-07T16:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "672cf6be214d6e3a402a1e3a"
+  },
+  "usuario_id": {
+    "$oid": "672cd742214d6e3a402a1dca"
+  },
+  "produto_id": {
+    "$oid": "673227f85d7c511b9383626d"
+  },
+  "nota": 2,
+  "comentario": "ODIEI!",
+  "data_avaliacao": {
+    "$date": "2024-11-08T17:00:00.000Z"
+  }
+}]

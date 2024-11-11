@@ -1,9 +1,24 @@
+//Desconto geral de 10%
 db.produtos.updateMany(
   {},
   {
     $set: {
       promocao: {
-        desconto: 10, // Exemplo: 10% de desconto
+        desconto: 10, 
+        data_inicio: new Date("2024-11-01"),
+        data_fim: new Date("2024-11-30")
+      }
+    }
+  }
+);
+
+//Desconto na calça de 30%
+db.produtos.updateOne(
+  {_id: ObjectId("673227f85d7c511b9383626d")},
+  {
+    $set: {
+      promocao: {
+        desconto: 30, 
         data_inicio: new Date("2024-11-01"),
         data_fim: new Date("2024-11-30")
       }

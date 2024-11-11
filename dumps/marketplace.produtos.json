@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "673227f85d7c511b9383626a"
+  },
+  "nome": "Smartphone XYZ",
+  "descricao": "Smartphone de última geração com câmera de alta resolução.",
+  "preco": 2999.99,
+  "quantidade": 10,
+  "categoria": {
+    "$oid": "6732263298d2e2b68cd6c63a"
+  }
+},
+{
+  "_id": {
+    "$oid": "673227f85d7c511b9383626b"
+  },
+  "nome": "Camiseta básica",
+  "descricao": "Camiseta de algodão, diversas cores.",
+  "preco": 29.99,
+  "quantidade": 50,
+  "categoria": {
+    "$oid": "6732263298d2e2b68cd6c63b"
+  }
+},
+{
+  "_id": {
+    "$oid": "673227f85d7c511b9383626c"
+  },
+  "nome": "Notebook Gamer",
+  "descricao": "Notebook poderoso para jogos e tarefas pesadas.",
+  "preco": 5999.99,
+  "quantidade": 5,
+  "categoria": {
+    "$oid": "6732263298d2e2b68cd6c63a"
+  }
+},
+{
+  "_id": {
+    "$oid": "673227f85d7c511b9383626d"
+  },
+  "nome": "Calça jeans",
+  "descricao": "Calça jeans clássica, diversos tamanhos.",
+  "preco": 99.99,
+  "quantidade": 100,
+  "categoria": {
+    "$oid": "6732263298d2e2b68cd6c63b"
+  }
+},
+{
+  "_id": {
+    "$oid": "673227f85d7c511b9383626e"
+  },
+  "nome": "Café em grãos",
+  "descricao": "Café 100% arábica, torra média.",
+  "preco": 35.99,
+  "quantidade": 20,
+  "categoria": {
+    "$oid": "6732263298d2e2b68cd6c63c"
+  }
+}]

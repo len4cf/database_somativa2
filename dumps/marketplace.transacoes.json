@@ -1,0 +1,82 @@
+[{
+  "_id": {
+    "$oid": "672cf12c214d6e3a402a1e23"
+  },
+  "usuario_id": {
+    "$oid": "672cd742214d6e3a402a1dc9"
+  },
+  "produto_id": {
+    "$oid": "673227f85d7c511b9383626c"
+  },
+  "data_compra": {
+    "$date": "2024-11-07T15:00:00.000Z"
+  },
+  "quantidade": 2,
+  "valor_total": 3000
+},
+{
+  "_id": {
+    "$oid": "672cf12c214d6e3a402a1e24"
+  },
+  "usuario_id": {
+    "$oid": "672cd742214d6e3a402a1dca"
+  },
+  "produto_id": {
+    "$oid": "673227f85d7c511b9383626c"
+  },
+  "data_compra": {
+    "$date": "2024-11-08T16:00:00.000Z"
+  },
+  "quantidade": 1,
+  "valor_total": 3500
+},
+{
+  "_id": {
+    "$oid": "672cf30c214d6e3a402a1e2f"
+  },
+  "usuario_id": {
+    "$oid": "672cd742214d6e3a402a1dc9"
+  },
+  "produto_id": {
+    "$oid": "673227f85d7c511b9383626d"
+  },
+  "data_compra": {
+    "$date": "2024-11-07T15:00:00.000Z"
+  },
+  "quantidade": 2,
+  "valor_total": 3000
+},
+{
+  "_id": {
+    "$oid": "672cfc43214d6e3a402a1e40"
+  },
+  "usuario_id": {
+    "$oid": "672cd742214d6e3a402a1dca"
+  },
+  "produto_id": {
+    "$oid": "673227f85d7c511b9383626a"
+  },
+  "quantidade": 1,
+  "valor_total": 150,
+  "pontos_ganhos": 150,
+  "data_compra": {
+    "$date": "2024-11-07T17:43:31.975Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "672cfce3214d6e3a402a1e44"
+  },
+  "usuario_id": {
+    "$oid": "672cd742214d6e3a402a1dca"
+  },
+  "produto_id": {
+    "$oid": "673227f85d7c511b9383626e"
+  },
+  "quantidade": 1,
+  "valor_total": 125,
+  "pontos_ganhos": 125,
+  "data_compra": {
+    "$date": "2024-11-07T17:46:11.546Z"
+  }
+}]
