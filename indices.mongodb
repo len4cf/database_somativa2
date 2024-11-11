@@ -1,0 +1,4 @@
+db.usuarios.getIndexes();
+db.avaliacoes.getIndexes();
+db.transacoes.getIndexes();
+db.produtos.getIndexes();
